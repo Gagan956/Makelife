@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>makelife|Hospital</title>
+    <link href="https://fonts.googleapis.com/css?family=Headland+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style type="text/css">
+        .button:focus,input:focus{
+            outline: none;
+        }
+        body{
+            background: url("img/iStock-927897070.jpg") no-repeat fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+	<div class="container">
+	    <div class="row">
+	    	<div style="width:20%; margin:2% auto" class="heading">
+	    		<h1>Recipients<h1>
+	    	</div>
+<div style="width:60%; margin:2% 20%">
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+
+			  <th scope="col">Blood_Grp</th>
+			  <th scope="col">Organ required</th>
+			  <th scope="col">Contact number</th>
+			  <th scope="col">City</th>				
+			</tr>
+		  </thead>	
+		<tbody>
+
+		<% recipients.forEach(function(recipient){ %>
+		<tr>	
+
+		<td><%= recipient.blood_group%></td>
+		<td><%= recipient.organ_needed %></td>
+		<td><%= recipient.contact_no %></td>
+		<td><%= recipient.city %></td>
+		</tr>
+	<% }); %>
+		</tbody>
+	</table>
+	</div>
+<% include ../partials/footer %>
